@@ -90,6 +90,8 @@ metrics=(
     "lts__t_sector_hit_rate.pct"
     "sm__pipe_tensor_op_hmma_cycles_active.avg.pct_of_peak_sustained_active"
     "smsp__inst_executed.sum"
+    "lts__t_sectors_srcunit_tex_op_read_lookup_hit"
+    "lts__t_sectors_srcunit_tex_op_read_lookup_miss"
 )
 
 # -------------- Iterate over each .ncu-rep file --------------
