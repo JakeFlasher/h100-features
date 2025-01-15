@@ -94,7 +94,7 @@ metrics=(
 
 # -------------- Iterate over each .ncu-rep file --------------
 shopt -s nullglob
-REP_FILES=( $GPUNAME/ncu_reports/*.ncu-rep )
+REP_FILES=( $GPUNAME/ncu_reports/*/*.ncu-rep )
 
 if [ ${#REP_FILES[@]} -eq 0 ]; then
     echo_error "No .ncu-rep files found in the current directory."
