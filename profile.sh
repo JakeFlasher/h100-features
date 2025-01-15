@@ -5,7 +5,7 @@
 #              Adds a manual flag for (--server or --pc):
 #                --pc     : Use system 'ncu' from $PATH as-is.
 #                --server : Prompt for ncu path, run commands with sudo.
-# Author: [Your Name]
+# Author: Chengao Shi
 # Date: [Date]
 # -----------------------------------------------------------------
 
