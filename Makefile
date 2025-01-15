@@ -8,7 +8,7 @@
 sm_version       = 90a   # Adjust to your GPU's SM version as needed (e.g. 90a for H100).
 NVCC             = /usr/local/cuda-12.4/bin/nvcc
 INCLUDES         = -I./headers/device/ -I./headers/host/
-OPTIMIZATION     = -O0
+OPTIMIZATION     = -O3
 LINKS            = -lcudart -lcuda
 BIN_DIR          = bin
 
