@@ -46,7 +46,8 @@ compile_all: $(ALL_EXECUTABLES)
 
 # Build rule for each .cu → bin/file
 $(BIN_DIR)/%: %.cu
-	mkdir -p $(BIN_DIR)
+	mkdir -p $(BIN_DIR)/dense
+	mkdir -p $(BIN_DIR)/sparse
 	$(COMPILE_TEMPLATE)
 
 # 2) profile_all: runs Nsight Compute profiling on each built executable
@@ -55,7 +56,8 @@ profile_all: $(patsubst $(BIN_DIR)/%,$(REPORTS_DIR)/%.ncu-rep,$(ALL_EXECUTABLES)
 
 # Build the .ncu-rep from each executable
 $(REPORTS_DIR)/%.ncu-rep: $(BIN_DIR)/%
-	mkdir -p $(REPORTS_DIR)
+	mkdir -p $(REPORTS_DIR)/dense
+	mkdir -p $(REPORTS_DIR)/sparse
 	$(NCU_COMMAND) -o $@ -f $<
 
 # 3) analyze: uses profile.sh to parse .ncu-rep files into CSVs
