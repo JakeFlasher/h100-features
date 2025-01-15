@@ -6,7 +6,7 @@
 
 # --------------------- Basic Paths / Flags ---------------------
 sm_version       = 90a   # Adjust to your GPU's SM version as needed (e.g. 90a for H100).
-NVCC             = /usr/local/cuda-12.4/bin/nvcc
+NVCC             = /usr/local/cuda-12.6/bin/nvcc
 INCLUDES         = -I./headers/device/ -I./headers/host/
 OPTIMIZATION     = -O3
 LINKS            = -lcudart -lcuda
@@ -27,9 +27,9 @@ endef
 
 # We create a list of all .cu files in these subdirectories:
 DENSE_SOURCES   := $(wildcard dense/*.cu)
-EXAMPLES_SOURCES:= $(wildcard examples/*.cu)
+# EXAMPLES_SOURCES:= $(wildcard examples/*.cu)
 SPARSE_SOURCES  := $(wildcard sparse/*.cu)
-ALL_SOURCES     := $(DENSE_SOURCES) $(EXAMPLES_SOURCES) $(SPARSE_SOURCES)
+ALL_SOURCES     := $(DENSE_SOURCES) $(SPARSE_SOURCES)
 
 # Convert each .cu file into an executable name by substituting .cu → no extension
 # and prefixing bin/ as the final location.
