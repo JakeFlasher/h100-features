@@ -5,8 +5,8 @@
 ################################################################################
 
 # --------------------- Basic Paths / Flags ---------------------
-sm_version       = 90a   # Adjust to your GPU's SM version as needed (e.g. 90a for H100).
-NVCC             = /usr/local/cuda-12.6/bin/nvcc
+sm_version       = $(shell nvidia-smi --query-gpu=compute_cap --format=csv,noheader|head -n 1 | sed 's/\.//g')   # Adjust to your GPU's SM version as needed (e.g. 90a for H100).
+NVCC             = $(shell which nvcc)
 INCLUDES         = -I./headers/device/ -I./headers/host/
 OPTIMIZATION     = -O3
 LINKS            = -lcudart -lcuda
